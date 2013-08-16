@@ -1,46 +1,30 @@
-# Jekyll-Bootstrap
+## jlwestsr.github.com (ver 0.1.0)
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+This site has gone through a complete redesign of using the jekyll-bootstrap 
+github.com project.
 
-## Usage
+## Content
 
-For all usage and documentation please see: <http://jekyllbootstrap.com>
+In adition to hosting my [Tech Blog](http://jlwestrs.com/) this site also 
+hosts serveral sections that you may find useful:
 
-## Version
+## [Cheatsheets](http://jlwestsr.com/cheatsheets/)
 
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
+This area has many different types of cheatsheets. You can find cheatsheets 
+for different programming languages as well as operating system cheatsheets.
 
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
+## [Cookbooks](http://jlwestsr.com/cookbooks/)
 
-## Contributing
+The cookbooks area has something for everything. As I come accross different use
+cases that seem out of the ordinary I will be documenting the process of solving
+ the requirement in this area no matter what language or operating system.
 
-This repository tracks 2 projects:
+## For my son...
 
-- **Jekyll-Bootstrap Framework.**
-  The framework for which users should clone and build their blog on top of is available in the master branch.
+This site is dedicated to my son, Jason L West Jr., in the hopes that he will find
+this information useful as he continues his journey into the realm of programming 
+and the IT industry.
 
-  To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-  This is very important as it allows me to accept your pull request without having to publish a public version release.
+## Versioning of Source Code
 
-  Small, atomic Features, bugs, etc.
-  Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-  Please rebase as often as possible when working.
-  Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
-
-  For Big Features or major API extensions/edits:
-  This is the one case where I'll accept pull-requests based off the master branch.
-  This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-  Translation : it might take a bit longer so please be patient! (but sincerely thank you).
-
-- **Jekyll-Bootstrap Documentation Website.**
-  The documentation website at <http://jekyllbootstrap.com> is maintained in the gh-pages branch.
-  Please fork and contribute documentation additions to this branch only.
-
-The master and gh-pages branch do not share the same ancestry. Please treat them as completely separate git repositories!
-
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
+This application uses the [Open ACS versioning system](http://openacs.org/doc/eng-standards-versioning.html)

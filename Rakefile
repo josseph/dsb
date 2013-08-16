@@ -5,11 +5,13 @@ require 'time'
 
 SOURCE = "."
 CONFIG = {
-  'version' => "0.3.0",
+  'version' => "0.2.13",
   'themes' => File.join(SOURCE, "_includes", "themes"),
   'layouts' => File.join(SOURCE, "_layouts"),
+  'drafts' => File.join(SOURCE, "_drafts"),
   'posts' => File.join(SOURCE, "_posts"),
   'post_ext' => "md",
+  'page_ext' => "md",
   'theme_package_version' => "0.1.0"
 }
 
@@ -40,16 +42,15 @@ module JB
   end #Path
 end #JB
 
-# Usage: rake post title="A Title" [date="2012-02-09"] [tags=[tag1, tag2]]
+# Usage: rake post title="A Title" [date="2012-02-09"]
 desc "Begin a new post in #{CONFIG['posts']}"
 task :post do
   abort("rake aborted: '#{CONFIG['posts']}' directory not found.") unless FileTest.directory?(CONFIG['posts'])
   title = ENV["title"] || "new-post"
-  tags = ENV["tags"] || "[]"
   slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   begin
     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
-  rescue => e
+  rescue Exception => e
     puts "Error - date format must be YYYY-MM-DD, please check you typed it correctly!"
     exit -1
   end
@@ -65,7 +66,7 @@ task :post do
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
     post.puts 'description: ""'
     post.puts "category: "
-    post.puts "tags: #{tags}"
+    post.puts "tags: []"
     post.puts "---"
     post.puts "{% include JB/setup %}"
   end
@@ -78,7 +79,7 @@ desc "Create a new page."
 task :page do
   name = ENV["name"] || "new-page.md"
   filename = File.join(SOURCE, "#{name}")
-  filename = File.join(filename, "index.html") if File.extname(filename) == ""
+  filename = File.join(filename, "index.#{CONFIG['post_ext']}") if File.extname(filename) == ""
   title = File.basename(filename, File.extname(filename)).gsub(/[\W\_]/, " ").gsub(/\b\w/){$&.upcase}
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
@@ -91,6 +92,7 @@ task :page do
     post.puts "layout: page"
     post.puts "title: \"#{title}\""
     post.puts 'description: ""'
+    post.puts ""
     post.puts "---"
     post.puts "{% include JB/setup %}"
   end
@@ -109,7 +111,7 @@ namespace :theme do
   # Public: Switch from one theme to another for your blog.
   #
   # name - String, Required. name of the theme you want to switch to.
-  #        The theme must be installed into your JB framework.
+  #        The the theme must be installed into your JB framework.
   #
   # Examples
   #
@@ -198,8 +200,8 @@ namespace :theme do
     # Mirror each file into the framework making sure to prompt if already exists.
     packaged_theme_files.each do |filename|
       file_install_path = File.join(JB::Path.base, filename)
-      if File.exist? file_install_path and ask("#{file_install_path} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
-        next
+      if File.exist? file_install_path
+        next if ask("#{file_install_path} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
       else
         mkdir_p File.dirname(file_install_path)
         cp_r File.join(packaged_theme_path, filename), file_install_path
