@@ -9,10 +9,10 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll Bootstrap
-tagline: Site Tagline
+title : Data&Web&Product&Mooc
+tagline: 数据 产品 网站 我
 author :
-  name : Name Lastname
+  name : 张欣
   email : blah@email.test
   github : username
   twitter : username
@@ -26,7 +26,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://username.github.io
+production_url : http://www.hiqianbei.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -101,7 +101,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-43237862-1'
     getclicky :
       site_id : 
     mixpanel :
