@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 嗨师兄 术业无专攻的家伙
+title: 綃業 术业无专攻的家伙
 tagline: 
 ---
 {% include JB/setup %}
