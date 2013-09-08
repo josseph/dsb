@@ -1,43 +1,37 @@
+# This is the default format. 
+# For more see: http://jekyllrb.com/docs/permalinks/
+permalink: /:categories/:year/:month/:day/:title 
 
-exclude: [".project", ".rvmrc", ".rbenv-version", "README.md", "README.odt", "Gemfile", "Gemfile.lock", "Rakefile"]
-
-baseuri: http://jlwestsr.com
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
-lsi: false
-markdown: rdiscount
 pygments: true
 
-# This is the default format.
-# for more information see https://github.com/mojombo/jekyll/wiki/Permalinks
-permalinks: /posts/:year/:month/:day/:title/
-
-#
-# Themes are encouraged to use these universal variables
+# Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title: Jason's Tech Blog
-tagline:
-author:
-  name: Jason L. West Sr.
-  email: jasonlwsr@yahoo.com
-  github: jlwestsr
-  twitter: jlwestsr
-  feedburner:
+title : Data&Web&Product&Mooc
+tagline: 数据 产品 网站 我
+author :
+  name : 綃業
+  email : josseph.zhang@gmail.com
+  github : username
+  twitter : username
+  feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
-# such as sitemap.txt
+# such as sitemap.txt 
 # Most places will/should use BASE_PATH to make the urls
 #
 # If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to usersname.github.com, replace with your usersname.
+# Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url: http://jlwestsr.com
+production_url : http://www.hiqianbei.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
-  version : 0.2.13
+  version : 0.3.0
 
   # All links will be namespaced by BASE_PATH if defined.
   # Links in your website should always be prefixed with {{BASE_PATH}}
@@ -47,14 +41,14 @@ JB :
   #   DO NOT SET BASE_PATH 
   #   (urls will be prefixed with "/" and work relatively)
   #
-  # GitHub Pages (http://username.github.com)
+  # GitHub Pages (http://username.github.io)
   #   DO NOT SET BASE_PATH 
   #   (urls will be prefixed with "/" and work relatively)
   #
-  # GitHub Project Pages (http://username.github.com/project-name)
+  # GitHub Project Pages (http://username.github.io/project-name)
   #
   #   A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
-  #  REQUIRED! Set BASE_PATH to: http://username.github.com/project-name
+  #  REQUIRED! Set BASE_PATH to: http://username.github.io/project-name
   #
   # CAUTION:
   #   - When in Localhost, your site will run from root "/" regardless of BASE_PATH
@@ -74,12 +68,13 @@ JB :
   ASSET_PATH : false
 
   # These paths are to the main pages Jekyll-Bootstrap ships with.
-  # Some JB helpers refer to these paths; change theme here if needed.
+  # Some JB helpers refer to these paths; change them here if needed.
   #
-  post_path: /posts/
   archive_path: /archive.html
   categories_path : /categories.html
   tags_path : /tags.html
+  atom_path : /atom.xml
+  rss_path : /rss.xml
 
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
@@ -88,7 +83,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jasonstechblog
+      short_name : jekyllbootstrap
     livefyre :
       site_id : 123
     intensedebate :
@@ -106,11 +101,14 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-4621414-4'
+        tracking_id : 'UA-43237862-1'
     getclicky :
       site_id : 
     mixpanel :
         token : '_MIXPANEL_TOKEN_'
+    piwik :
+        baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
+        idsite : '1'                   # the id of the site on Piwik
 
   # Settings for sharing helper. 
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.
@@ -130,14 +128,4 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-  pages_list : 
-    provider : "custom"
-
-  posts_collate : 
-    provider : "custom"
   
-  categories_list : 
-    provider : "custom"
-
-  tags_list : 
-    provider : "custom"
