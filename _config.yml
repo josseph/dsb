@@ -9,8 +9,8 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : windwild
-tagline: What is tagline...
+title : 嗨前辈
+tagline: 我还能变得更好吗
 author :
   name : 綃業
   email : josseph.zhang@gmail.com
@@ -26,7 +26,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://hiqianbei.com
+production_url : http://www.hiqianbei.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
