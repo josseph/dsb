@@ -1,7 +1,7 @@
 ---
 layout: page
-title: windwild
-tagline: windwild@github
+title: 嗨师兄 术业无专攻的家伙
+tagline: 
 ---
 {% include JB/setup %}
     
@@ -15,8 +15,5 @@ tagline: windwild@github
   {% endfor %}
 </ul>
 
-## About me
-
-A Geek at Chinese University of Hong Kong
 
 
